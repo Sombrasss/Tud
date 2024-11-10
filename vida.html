@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Metatags Open Graph -->
+    <meta property="og:title" content="cada uma com a vez dela">
+    <meta property="og:description" content="cada uma com a vez dela.">
+    <meta property="og:image" content="https://lambent-haupia-ba0aae.netlify.app/vida.jpg"> <!-- URL completo da imagem -->
+    <meta property="og:url" content="https://lambent-haupia-ba0aae.netlify.app"> <!-- URL completo da sua página -->
+    <meta property="og:type" content="website">
+  
+  
+    <style>
+ 
+  
+  
+  <title>cada uma com a vez dela </title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f3f3;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .progress-container {
+            width: 80%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 30px;
+            width: 0;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 10px 0 0 10px;
+        }
+        .iframe-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 50%;
+            height: 450px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">0%</div>
+        </div>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="iframe1" src="https://zireemilsoude.net/4/7346529" title="Iframe 1"></iframe>
+        <iframe id="iframe2" src="https://echonverforrinho.info?tid=1075418" title="Iframe 2"></iframe>
+    </div>
+
+    <script>
+        function animateProgressBar() {
+            const progressBar = document.getElementById('progress-bar');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('overlay').style.display = 'none';
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressBar.innerHTML = width + '%';
+                }
+            }, 200); // Intervalo ajustado para 20 segundos
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const overlay = document.getElementById('overlay');
+                overlay.style.opacity = 1;
+                animateProgressBar();
+
+                // Atualizar iframes após 5 segundos
+                setTimeout(() => {
+                    document.getElementById('iframe1').src += '';
+                    document.getElementById('iframe2').src += '';
+                }, 5000); // Atualização após 5 segundos
+
+            }, 000); // Atraso de 5 segundos para mostrar o overlay
+        });
+    </script>
+
+
+
+</body>
+</html>
